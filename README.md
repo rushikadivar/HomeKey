@@ -1,8 +1,8 @@
-# adding env file to the root
+### adding env file to the root
 npm install dotenv --save
 
-# install react router dom
+### install react router dom
 npm install react-router-dom
 
-# install material-ui components
+### install material-ui components
 npm install @material-ui/core
