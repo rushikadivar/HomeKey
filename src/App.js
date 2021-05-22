@@ -7,7 +7,9 @@ import {
 } from "react-router-dom";
 
 import SignIn from './components/SignIn'
+import SignUp from './components/SignUp'
 import AboutUs from './components/AboutUs'
+import Footer from './components/Footer'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
@@ -42,11 +44,17 @@ function App() {
     <ThemeProvider theme={theme}>
       <Router>
         <Switch>
-          <Route exact path="/">
-            <SignIn />
+        <Route exact path="/">
+            <SignUp />
+            <Footer />
           </Route>
-          <Route exact path="/about">
-            <AboutUs />
+          <Route exact path="/signup">
+            <SignUp />
+            <Footer />
+          </Route>
+          <Route exact path="/signin">
+            <SignIn />
+            <Footer />
           </Route>
         </Switch>
       </Router>
