@@ -1,5 +1,5 @@
 # HomeKey
-### A OneStop Solution to find the Home on rent
+A OneStop Solution to find the Home on rent
 
 ## Installing dependencies
 > To add env file to the root
