@@ -8,8 +8,8 @@ import {
 
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
-import AboutUs from './components/AboutUs'
 import Footer from './components/Footer'
+import Header from './components/Header'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
@@ -42,22 +42,21 @@ require('dotenv').config()
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <Header />
       <Router>
         <Switch>
-        <Route exact path="/">
-            <SignUp />
-            <Footer />
-          </Route>
-          <Route exact path="/signup">
-            <SignUp />
-            <Footer />
+          <Route exact path="/">
+            <SignIn />
           </Route>
           <Route exact path="/signin">
             <SignIn />
-            <Footer />
+          </Route>
+          <Route exact path="/signup">
+            <SignUp />
           </Route>
         </Switch>
       </Router>
+      <Footer />
     </ThemeProvider>
   );
 }
