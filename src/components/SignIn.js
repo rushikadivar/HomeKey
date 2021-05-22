@@ -13,13 +13,14 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
-                Your Website
-      </Link>{' '}
+            <Link color="inherit" href="https://github.com/meetakbari/HomeKey">
+                HomeKey
+            </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
         </Typography>
@@ -41,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
         width: '100%', // Fix IE 11 issue.
         marginTop: theme.spacing(1),
     },
+    textInput: {
+        color: "#e9806e",
+    },
     submit: {
         margin: theme.spacing(3, 0, 2),
     },
@@ -58,9 +62,10 @@ export default function SignIn() {
                 </Avatar>
                 <Typography component="h1" variant="h5">
                     Sign in
-        </Typography>
+                </Typography>
                 <form className={classes.form} noValidate>
-                    <TextField
+                    <TextField 
+                        className={classes.textInput}
                         variant="outlined"
                         margin="normal"
                         required
@@ -94,12 +99,12 @@ export default function SignIn() {
                         className={classes.submit}
                     >
                         Sign In
-          </Button>
+                    </Button>
                     <Grid container>
                         <Grid item xs>
                             <Link href="#" variant="body2">
                                 Forgot password?
-              </Link>
+                            </Link>
                         </Grid>
                         <Grid item>
                             <Link href="#" variant="body2">
