@@ -3,7 +3,8 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Link
 } from "react-router-dom";
 
 import SignIn from './components/SignIn'
@@ -45,17 +46,17 @@ function App() {
       <Router>
         <Switch>
         <Route exact path="/">
-            <SignUp />
+            <Link to={<SignUp />} />
             <Footer />
-          </Route>
-          <Route exact path="/signup">
-            <SignUp />
-            <Footer />
-          </Route>
-          <Route exact path="/signin">
-            <SignIn />
-            <Footer />
-          </Route>
+        </Route>
+        <Route exact path="/signup">
+          <Link to={<SignUp />} />
+          <Footer />
+        </Route>
+        <Route exact path="/signin">
+          <Link to={<SignIn />} />
+          <Footer />
+        </Route>
         </Switch>
       </Router>
     </ThemeProvider>
