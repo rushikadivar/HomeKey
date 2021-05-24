@@ -23,7 +23,7 @@ npm install @material-ui/icons
 ```bash
 git pull origin main
 ```
-## To execute the project in your local machine
+## To run the project in your local machine
 - Clone the repository.
 - Open the terminal in the same folder and write `npm install` 
 - It will install all the dependencies from the package.json file.
