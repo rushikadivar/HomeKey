@@ -13,8 +13,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 import GoogleButton from 'react-google-button'
-import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
-import { Height } from '@material-ui/icons';
+// import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
+// import { Height } from '@material-ui/icons';
 
 
 

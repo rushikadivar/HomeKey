@@ -14,7 +14,7 @@ import {
   InputLabel
 } from '@material-ui/core';
 
-import Popup from 'reactjs-popup';
+// import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
 // import Countries from '.../sharedData/Countries';
@@ -88,6 +88,7 @@ const AccountProfileDetails = (props) => {
     lastName: 'Kadivar',
     email: 'unonymous@gmail.com',
     phone: '',
+    currentAddress: ''
   });
 
   const [state, setState] = useState("");
@@ -260,6 +261,23 @@ const AccountProfileDetails = (props) => {
                 onChange={handleChange}
                 type="number"
                 value={values.phone}
+                variant="outlined"
+                disabled={disable}
+              />
+            </Grid>
+
+            <Grid
+              item              
+              xs={12}
+            >
+              <TextField
+                fullWidth
+                helperText="Please enter the current address"
+                label="current address"
+                name="currentAddress"
+                onChange={handleChange}
+                required
+                value={values.currentAddress}
                 variant="outlined"
                 disabled={disable}
               />
