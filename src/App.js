@@ -1,5 +1,3 @@
-// import './App.css';
-import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -42,8 +40,8 @@ require('dotenv').config()
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Header />
       <Router>
+        <Header />
         <Switch>
           <Route exact path="/">
             <SignIn />
@@ -55,8 +53,8 @@ function App() {
             <SignUp />
           </Route>
         </Switch>
+        <Footer />
       </Router>
-      <Footer />
     </ThemeProvider>
   );
 }
