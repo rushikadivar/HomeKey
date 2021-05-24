@@ -1,4 +1,3 @@
-// import './App.css';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -9,9 +8,12 @@ import {
 
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
-import AboutUs from './components/AboutUs'
 import Footer from './components/Footer'
+import Header from './components/Header'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+import Profile from './pages/Profile';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -42,24 +44,45 @@ require('dotenv').config()
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
-        <Switch>
-        <Route exact path="/">
-            <Link to={<SignUp />} />
-            <Footer />
-        </Route>
-        <Route exact path="/signup">
-          <Link to={<SignUp />} />
-          <Footer />
-        </Route>
-        <Route exact path="/signin">
-          <Link to={<SignIn />} />
-          <Footer />
-        </Route>
-        </Switch>
-      </Router>
-    </ThemeProvider>
+    // <ThemeProvider theme={theme}>
+    //   <Header />
+    //   <Router>
+    //     <Switch>
+    //       <Route exact path="/">
+    //           <Link to={<SignUp />} />
+    //           {/* <Footer /> */}
+    //       </Route>
+    //       <Route exact path="/signup">
+    //         <Link to={<SignUp />} />
+    //         {/* <Footer /> */}
+    //       </Route>
+    //       <Route exact path="/signin">
+    //         <Link to={<SignIn />} />
+    //         {/* <Footer /> */}
+    //       </Route>
+    //       <Route exact path="/account">
+    //         <Link to={<Profile />} />
+    //         {/* <Footer /> */}
+    //       </Route>
+    //     </Switch>
+    //   </Router>
+    //   <Footer />
+    // </ThemeProvider>
+
+    <div>
+      <ThemeProvider theme={theme}>
+        <Header />
+        <Router>
+          <Switch>
+            <Route path="/account" component={Profile} />
+            <Route exact path="/signin" component={SignIn} />
+            <Route exact path="/signup" component={SignUp} />
+          </Switch>
+        </Router>        
+        <Footer />
+      </ThemeProvider>    
+    </div>
+
   );
 }
 
