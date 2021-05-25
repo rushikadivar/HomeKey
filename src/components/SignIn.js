@@ -12,6 +12,11 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+import GoogleButton from 'react-google-button'
+// import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
+// import { Height } from '@material-ui/icons';
+
+
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -77,6 +82,15 @@ export default function SignIn() {
                         control={<Checkbox value="remember" color="primary" />}
                         label="Remember me"
                     />
+                    <Grid container>
+                        <Grid item 
+                            xs={12}
+                            md={2}
+                        >
+                            <GoogleButton height="25%"/>
+                        </Grid>
+                    </Grid>            
+
                     <Button
                         type="submit"
                         fullWidth

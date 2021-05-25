@@ -1,7 +1,9 @@
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  // Link
 } from "react-router-dom";
 
 import SignIn from './components/SignIn'
@@ -9,6 +11,9 @@ import SignUp from './components/SignUp'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+import Profile from './pages/Profile';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -39,23 +44,19 @@ require('dotenv').config()
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
+    <div>
+      <ThemeProvider theme={theme}>
         <Header />
-        <Switch>
-          <Route exact path="/">
-            <SignIn />
-          </Route>
-          <Route exact path="/signin">
-            <SignIn />
-          </Route>
-          <Route exact path="/signup">
-            <SignUp />
-          </Route>
-        </Switch>
+        <Router>
+          <Switch>
+            <Route path="/account" component={Profile} />
+            <Route exact path="/signin" component={SignIn} />
+            <Route exact path="/signup" component={SignUp} />
+          </Switch>
+        </Router>
         <Footer />
-      </Router>
-    </ThemeProvider>
+      </ThemeProvider>
+    </div>
   );
 }
 
