@@ -19,6 +19,11 @@ npm install @material-ui/core
 ```bash
 npm install @material-ui/icons
 ```
+> To install Google React Button
+```bash
+npm install --save react-google-button
+```
+
 ## To update local repo from remote git repo
 ```bash
 git pull origin main
