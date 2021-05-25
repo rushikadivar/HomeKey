@@ -19,7 +19,17 @@ npm install @material-ui/core
 ```bash
 npm install @material-ui/icons
 ```
+> To install Google React Button
+```bash
+npm install --save react-google-button
+```
+
 ## To update local repo from remote git repo
 ```bash
 git pull origin main
 ```
+## To run the project in your local machine
+- Clone the repository.
+- Open the terminal in the same folder and write `npm install` 
+- It will install all the dependencies from the package.json file.
+- Now run `npm run start` which will start the react app in your local machine's browser.

@@ -44,31 +44,6 @@ require('dotenv').config()
 
 function App() {
   return (
-    // <ThemeProvider theme={theme}>
-    //   <Header />
-    //   <Router>
-    //     <Switch>
-    //       <Route exact path="/">
-    //           <Link to={<SignUp />} />
-    //           {/* <Footer /> */}
-    //       </Route>
-    //       <Route exact path="/signup">
-    //         <Link to={<SignUp />} />
-    //         {/* <Footer /> */}
-    //       </Route>
-    //       <Route exact path="/signin">
-    //         <Link to={<SignIn />} />
-    //         {/* <Footer /> */}
-    //       </Route>
-    //       <Route exact path="/account">
-    //         <Link to={<Profile />} />
-    //         {/* <Footer /> */}
-    //       </Route>
-    //     </Switch>
-    //   </Router>
-    //   <Footer />
-    // </ThemeProvider>
-
     <div>
       <ThemeProvider theme={theme}>
         <Header />
@@ -78,11 +53,10 @@ function App() {
             <Route exact path="/" component={SignIn} />
             <Route exact path="/signup" component={SignUp} />
           </Switch>
-        </Router>        
+        </Router>
         <Footer />
-      </ThemeProvider>    
+      </ThemeProvider>
     </div>
-
   );
 }
 
