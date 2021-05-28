@@ -3,10 +3,10 @@ import {
   Container,
   Grid
 } from '@material-ui/core';
-import UserDetails from '../components/Account/RenterProfile';
-import AccountProfileDetails from '../components/Account/RenterProfileDetails';
+import UserDetails from '../components/account/RenterProfile';
+import AccountProfileDetails from '../components/account/RenterProfileDetails';
 
-import Activity from '../components/Account/Activity';
+// import Activity from '../components/Account/Activity';
 
 
 const Account = () => (
@@ -47,8 +47,7 @@ const Account = () => (
           >
             <Grid 
               item
-              >
-                <Activity />
+              >                
             </Grid>              
           </Grid>
       </Container>
