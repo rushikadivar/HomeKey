@@ -46,12 +46,21 @@ function App() {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Header />
         <Router>
           <Switch>
-            <Route path="/account" component={Profile} />
-            <Route exact path="/" component={SignIn} />
-            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/" >
+              <SignIn />
+            </Route>
+            <Route exact path="/account">
+              <Header />
+              <Profile />
+            </Route> 
+            <Route exact path="/signin">
+              <SignIn />
+            </Route> 
+            <Route exact path="/signup">
+              <SignUp />
+            </Route> 
           </Switch>
         </Router>
         <Footer />

@@ -1,5 +1,5 @@
 import React ,{useState} from 'react';
-import  {useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -43,8 +43,7 @@ export default function SignUp() {
   const history = useHistory();
 
     const [user,setUser] = useState({
-
-      firstName: " ", lastName: " ", email: " ",password: " " 
+      // firstName: "", lastName: "", email: "",password: "" 
     });
     
     let firstName ,value;
@@ -62,7 +61,7 @@ export default function SignUp() {
 
     const { firstName, lastName, email, password}  = user;
 
-     const res =  await fetch("/register", {
+     const res =  await fetch("/signup", {
          
       method : "POST",
       headers :{
@@ -78,12 +77,12 @@ export default function SignUp() {
      if(data.status === "error" || !data){
        window.alert("INVALID REGISTER")
        console.log("INVALID REGISTER")
-     } else{
+     }else{
        window.alert("REGISTER VALIDE")
        console.log("REGISTER VALIDE")
        
 
-       window.location = "/";
+       history.push("/SignIn");
      }
 
   }
@@ -99,7 +98,7 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form method="POST" className={classes.form} noValidate method = "POST">
+        <form method="POST" className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
