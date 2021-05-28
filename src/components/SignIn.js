@@ -40,8 +40,14 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+
 export default function SignIn() {
     const classes = useStyles();
+
+    const handleSignIn = () => {
+        console.log("clciked")
+        window.location = "/account";
+    }
 
     return (
         <Container component="main" maxWidth="xs">
@@ -96,6 +102,7 @@ export default function SignIn() {
                         variant="contained"
                         color="primary"
                         className={classes.submit}
+                        onClick={handleSignIn}
                     >
                         Sign In
                     </Button>

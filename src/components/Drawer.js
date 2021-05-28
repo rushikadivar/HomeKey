@@ -1,4 +1,5 @@
 import React from "react";
+// import { Route, Router } from "react-router-dom";
 import Drawer from "@material-ui/core/Drawer";
 import withStyles from "@material-ui/core/styles/withStyles";
 import {
@@ -6,7 +7,6 @@ import {
     ListItem,
     ListItemText,
 } from "@material-ui/core";
-
 
 const styles = theme => ({
     list: {
@@ -19,13 +19,20 @@ const styles = theme => ({
 
 class DrawerComponent extends React.Component {
     state = {
-        left: false
+        left: false,
+        showComponent: false
     };
+
+    handleButtonClick = () => {
+        this.setState({
+            showComponent: true
+        })
+    }
 
     render() {
         const { classes } = this.props;
 
-        const sideList = side => (
+        const sideList = (side) => (
             <div
                 className={classes.list}
                 role="presentation"
@@ -35,7 +42,8 @@ class DrawerComponent extends React.Component {
                 <List>
                     {["Home", "Get home", "Rent home", "About Us", "Contact Us"].map((text, index) => (
                         <ListItem button key={text}>
-                            <ListItemText primary={text} />
+                            <ListItemText primary={text}  onClick={() => this.handleButtonClick} />
+                            {/* {this.state.showComponent ?  : null} */}
                         </ListItem>
                     ))}
                 </List>

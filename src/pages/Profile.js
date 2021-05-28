@@ -3,8 +3,11 @@ import {
   Container,
   Grid
 } from '@material-ui/core';
-import AccountProfile from '../components/account/RenterProfile';
-import AccountProfileDetails from '../components/account/RenterProfileDetails';
+import UserDetails from '../components/Account/RenterProfile';
+import AccountProfileDetails from '../components/Account/RenterProfileDetails';
+
+import Activity from '../components/Account/Activity';
+
 
 const Account = () => (
 
@@ -26,7 +29,7 @@ const Account = () => (
             md={6}
             xs={12}
           >
-            <AccountProfile />
+            <UserDetails />
           </Grid>
           <Grid
             item
@@ -37,6 +40,17 @@ const Account = () => (
             <AccountProfileDetails />
           </Grid>
         </Grid>
+
+        <Grid 
+          container
+          p={9}
+          >
+            <Grid 
+              item
+              >
+                <Activity />
+            </Grid>              
+          </Grid>
       </Container>
     </Box>
   

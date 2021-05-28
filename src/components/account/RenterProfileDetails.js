@@ -19,6 +19,11 @@ import 'reactjs-popup/dist/index.css';
 
 // import Countries from '.../sharedData/Countries';
 
+
+const styles = (theme) => {
+
+}
+
 const states = [
             {
                 stateName: "Gujarat",
@@ -82,6 +87,8 @@ const states = [
 
 
 const AccountProfileDetails = (props) => {
+
+  // const { classes } = this.props;
 
   const [values, setValues] = useState({
     firstName: 'Rushi',
@@ -177,9 +184,28 @@ const AccountProfileDetails = (props) => {
 
 
   }
+  
+  // const Activity = () => {
+  //   return (
+  //     <div className="">HelloHello WorldHello WorldHello World
+  //     Hello World
+  //     Hello World
+  //     Hello World
+  //     Hello World
+  //     Hello World
+  //     Hello World
+  //     Hello World
+  //     Hello World
+  //     Hello World
+  //     Hello World
+  //     Hello World
+  //     Hello World World</div>
+  //   );
+  // }
 
   return (
-    <form
+    <div>
+      <form
     //   autoComplete="off"
     //   noValidate
       {...props}
@@ -293,7 +319,7 @@ const AccountProfileDetails = (props) => {
                     <Select label="State"
                         value={state}
                         onChange={handleChangeState}
-                        disabled={disable}
+                        // disabled={disable}
                         >
                         {states.map((state) => (
                             <MenuItem
@@ -353,6 +379,8 @@ const AccountProfileDetails = (props) => {
         </Box>
       </Card>
     </form>
+    </div>
+    
   );
 };
 

@@ -1,4 +1,5 @@
-import React from 'react';
+import React ,{useState} from 'react';
+import  {useHistory} from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -33,8 +34,60 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function SignUp() {
   const classes = useStyles();
+
+  // ///////////////////////////////////////////
+
+  const history = useHistory();
+
+    const [user,setUser] = useState({
+
+      firstName: " ", lastName: " ", email: " ",password: " " 
+    });
+    
+    let firstName ,value;
+    const handleInputs = (e) => {
+      console.log(e);
+
+      firstName = e.target.firstName
+      value = e.target.value;
+
+      setUser({...user,[firstName]:value});
+    }
+
+  const PostData = async (e) => {
+    e.preventDefault();
+
+    const { firstName, lastName, email, password}  = user;
+
+     const res =  await fetch("/register", {
+         
+      method : "POST",
+      headers :{
+        "Content-Type" : "application/json"
+      },
+     body:JSON.stringify({
+       firstName, lastName, email, password
+     })
+
+     });
+     const data = await res.json();
+
+     if(data.status === "error" || !data){
+       window.alert("INVALID REGISTER")
+       console.log("INVALID REGISTER")
+     } else{
+       window.alert("REGISTER VALIDE")
+       console.log("REGISTER VALIDE")
+       
+
+       window.location = "/";
+     }
+
+  }
+
 
   return (
     <Container component="main" maxWidth="xs">
@@ -46,12 +99,14 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form method="POST" className={classes.form} noValidate method = "POST">
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
                 autoComplete="fname"
                 name="firstName"
+                value={user.firstName}
+                onChange={handleInputs}
                 variant="outlined"
                 required
                 fullWidth
@@ -68,6 +123,8 @@ export default function SignUp() {
                 id="lastName"
                 label="Last Name"
                 name="lastName"
+                value={user.lastName}
+                onChange={handleInputs}
                 autoComplete="lname"
               />
             </Grid>
@@ -79,6 +136,8 @@ export default function SignUp() {
                 id="email"
                 label="Email Address"
                 name="email"
+                value={user.email}
+                onChange={handleInputs}
                 autoComplete="email"
               />
             </Grid>
@@ -88,6 +147,8 @@ export default function SignUp() {
                 required
                 fullWidth
                 name="password"
+                value={user.password}
+                onChange={handleInputs}
                 label="Password"
                 type="password"
                 id="password"
@@ -107,6 +168,8 @@ export default function SignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick = {PostData}
+            
           >
             Sign Up
           </Button>
