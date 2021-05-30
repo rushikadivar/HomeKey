@@ -6,7 +6,9 @@ const bcrypt = require('bcryptjs');
 
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#(&@!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk';
+const jwt_config = require('../../../config')
+
+
 
 // ///////////// for login the user  ///////////////////
 
@@ -26,7 +28,7 @@ router.route('/').post( async (req, res) => {
                 id: user._id,
                 email: user.email
             },
-            JWT_SECRET
+            jwt_config.JWT_SECRET
         )
 
         return res.json({ status: 'ok', data: token })

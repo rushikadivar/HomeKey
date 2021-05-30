@@ -9,13 +9,19 @@ const user = require('../models/User');
 router.route('/').post(async (req, res) => {
     const { firstName, lastName, email, password: plainTextPassword } = req.body
 
+    const validEmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    const validEmail = (email) => {
+        return (email.match(validEmailRegex));   
+    }
+
     if (!firstName || typeof firstName !== 'string') {
         return res.json({ status: 'error', error: 'Invalid username' })
     }
     if (!lastName || typeof lastName !== 'string') {
         return res.json({ status: 'error', error: 'Invalid username' })
     }
-    if (!email || typeof email !== 'string') {
+    if (!email || !validEmail(email)) {
         return res.json({ status: 'error', error: 'Invalid username' })
     }
 
